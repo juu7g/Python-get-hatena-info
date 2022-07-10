@@ -26,7 +26,7 @@ Use each API of Hatena Blog to get the number of stars and bookmarks attached to
 ## 使い方 Usage
 
 ```dosbatch
-	get-hatena-info.exe
+	get_hatena_info.exe
 ```
 
 - 操作 Operation  
@@ -46,7 +46,7 @@ Use each API of Hatena Blog to get the number of stars and bookmarks attached to
 
 ## プログラムの説明サイト Program description site
 
-[はてなブログのスターとブックマークの数を取得するアプリの作り方【Python】 - プログラムでおかえしできるかな](https://juu7g.hatenablog.com/entry/Python/blog/get-stars-bm-prog)  
+[はてなブログ、スター、ブックマーク用APIの使い方【Python】 - プログラムでおかえしできるかな](https://juu7g.hatenablog.com/entry/Python/blog/get-stars-bm-prog)  
 
 ## 作者 Authors
 juu7g
