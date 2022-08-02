@@ -50,7 +50,7 @@ Use each API of Hatena Blog to get the number of stars and bookmarks attached to
 ## プログラムの説明サイト Program description site
 
 - [はてなブログ、スター、ブックマーク用APIの使い方【Python】 - プログラムでおかえしできるかな](https://juu7g.hatenablog.com/entry/Python/blog/get-stars-bm-prog)  
-- [はてなブログのアイキャッチ画像リンクの取り方【Python】 - プログラムでおかえしできるかな](https://juu7g.hatenablog.com//entry/Python/blog/get-eye-catch)
+- [はてなブログのアイキャッチ画像のURLの取り方【Python】 - プログラムでおかえしできるかな](https://juu7g.hatenablog.com//entry/Python/blog/get-eye-catch)
 
 ## 作者 Authors
 juu7g
