@@ -55,6 +55,22 @@ class HatenaBlogAtom():
             # print(f"Star count:{stars_num}")
         return stars_num
 
+    def get_hatena_eye_catch(self, url:str) -> str:
+        """
+        はてなブログカードからアイキャッチ画像のURLを取得
+        Args:
+            str:    記事のURL
+        Returns:
+            str:    記事のアイキャッチ画像のURL
+        """
+        eye = ""
+        endpoint = f"https://hatenablog.com/oembed?url={url}"
+        r = requests.get(endpoint)
+        if r.status_code == 200:
+            j = r.json()
+            eye = j.get("image_url", "")     # 記事のアイキャッチ画像のURL
+        return eye
+
     def get_hatena_bookmark(self, url:str) -> int:
         """
         はてなブックマーク情報をリクエストして取得。ブックマークの数を返す
@@ -197,7 +213,7 @@ class HatenaBlogAtom():
         try:
             with open(logfile_name, mode="w", encoding="utf_8_sig", newline="") as file_:
                 # 辞書から出力するので辞書のキーをヘッダーとして定義する
-                csv_fields = ["url", "title", "published", "updated", "bookmark", "yellow", "green", "red", "blue", "purple", "category"]
+                csv_fields = ["url", "title", "published", "updated", "bookmark", "yellow", "green", "red", "blue", "purple", "category", "eye_catch"]
                 csv_writer = csv.DictWriter(file_, fieldnames=csv_fields)
                 csv_writer.writeheader()
                 csv_writer.writerows(blog_info)
@@ -218,6 +234,8 @@ class HatenaBlogAtom():
             bookmark_num = self.get_hatena_bookmark(url)    # はてなブックマーク数の取得
             stars_dict["url"] = url                         # スターの辞書にURLを追加
             stars_dict["bookmark"] = bookmark_num           # スターの辞書にブックマーク数を追加
+            eye = self.get_hatena_eye_catch(url)            # アイキャッチ画像のURLを取得
+            stars_dict["eye_catch"] = eye                   # スターの辞書にアイキャッチ画像のURLを追加
             stars_dict.update(value)                        # スターの辞書に記事情報(辞書)を追加
             article_info.append(stars_dict)                 # スターの辞書を記事属性の辞書としてリストに追加
         return article_info

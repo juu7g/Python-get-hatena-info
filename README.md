@@ -15,6 +15,10 @@ Use each API of Hatena Blog to get the number of stars and bookmarks attached to
 	The number of stars is output for each color  
 - 結果は CSV ファイルに出力  
 	Results output to CSV file  
+	- CSV ファイルの出力項目  
+		CSV file output items  
+		url,title,published,updated,bookmark,yellow,green,red,blue,purple  
+		,category,eye_catch  
 - 出力する記事の数を指定可能  
 	You can specify the number of articles to output  
 
@@ -38,7 +42,6 @@ Use each API of Hatena Blog to get the number of stars and bookmarks attached to
 		Launch the app  
 	- 出力されたCSVファイルの確認  
 		Check the output CSV file
-
 
 ## インストール方法 Installation
 
